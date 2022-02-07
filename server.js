@@ -4,6 +4,9 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 
+const controller = require('./routes/api/logic');
+////    MongoDB connect
+
 // Init Middleware
 app.use(express.json());
 

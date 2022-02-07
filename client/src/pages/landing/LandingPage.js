@@ -61,10 +61,10 @@ export default function LandingPage() {
         <Membership />
         <Stack id='team'>
 
-          <Team />
+          {/* <Team /> */}
         </Stack>
         <Stack id='key'>
-          <KeyInfo />
+          {/* <KeyInfo /> */}
         </Stack>
         <Stack id="roadmap">
           <Roadmap />

@@ -79,7 +79,7 @@ export default function About() {
 
             <MotionInView variants={varFadeInUp}>
               <Typography variant="h2" color='primary.main' className='flux_title' sx={{ mb: 3, mt: { md: 8 } }}>
-                s Forever
+                Forever
               </Typography>
               <Typography
                 variant='h6'
