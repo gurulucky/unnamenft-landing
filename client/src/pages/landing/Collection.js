@@ -23,7 +23,7 @@ const Scroll = styled(Box)(() => ({
     height: 256,
     background: 'url(https://ucarecdn.com/c6da352c-993e-4948-80a1-b1e99cbab7e9/ss.jpg)',
     backgroundSize: '768px 254px',
-    animation: 'mosaic 40s linear infinite',
+    animation: 'mosaic 5s linear infinite',
     '@keyframes mosaic': {
         '0%': {
             backgroundPosition: '0 0'
@@ -38,7 +38,7 @@ const Scroll_2 = styled(Box)(() => ({
     height: 256,
     background: 'url(https://ucarecdn.com/c6da352c-993e-4948-80a1-b1e99cbab7e9/ss.jpg)',
     backgroundSize: '768px 254px',
-    animation: 'mosaic 40s linear infinite',
+    animation: 'mosaic 5s linear infinite',
     '@keyframes mosaic': {
         '0%': {
             backgroundPosition: '0 0'
