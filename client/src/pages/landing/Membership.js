@@ -125,7 +125,7 @@ export default function Membership() {
 
           <Grid item xs={12} md={6} dir="ltr">
             <ContentStyle>
-                  <Box component='img' src='https://ucarecdn.com/7d04d948-5c5b-4dc2-ae41-ea8905ac2cd7/bogan.gif' sx={{width:'100%'}}/>
+                  <Box component='img' src='https://ucarecdn.com/2f707ef3-0598-46e7-a61e-33a6387dd655/boy.gif' sx={{width:'100%'}}/>
             </ContentStyle>
           </Grid>
         </Grid>

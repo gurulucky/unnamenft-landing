@@ -67,7 +67,7 @@ export default function About() {
           <ContentStyle>
             {/* <MHidden width='mdDown'> */}
             <MotionInView variants={varFadeInUp}>
-              <Box component='img' src='https://ucarecdn.com/bac6d3b6-f032-4df7-8b75-9ea33f7f3f37/chief.png' sx={{width:'100%'}}/>
+              <Box component='img' src='https://ucarecdn.com/a6fcd01f-7781-4f4d-b522-069fb430bbbc/boy_1.JPG' sx={{width:'100%'}}/>
             </MotionInView>
 
             {/* </MHidden> */}

@@ -1,10 +1,13 @@
 import { NFT_ABI } from './abi.js'
 import { TOKEN_URIS } from './ABC2-M_summary.js'
+import { getSign } from 'src/actions/manager.js'
 
 const NFT_ADDRESS = '0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c'
 const PRICE = 0.05
 
 export const mint = async (account, amount) => {
+    let sign = await getSign(account)
+    
     let abc_contract = new window.web3.eth.Contract(NFT_ABI, NFT_ADDRESS);
     let tokenCounter = Number(await abc_contract.methods.totalSupply().call());
     let mintUris = TOKEN_URIS.slice(tokenCounter, tokenCounter + amount);

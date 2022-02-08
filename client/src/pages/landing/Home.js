@@ -67,12 +67,12 @@ export default function Home() {
         {/* <HeroImgStyle alt="hero" src="/static/chief_nft.png" variants={varFadeInUp} /> */}
 
         {/* <Container maxWidth="lg"> */}
-        <Box component="img" src='https://ucarecdn.com/c2b5be2b-0790-4af2-957c-b083e9248053/bg.jpg' sx={{width:'100%'}}>
+        <Box component="img" src='https://ucarecdn.com/ba72a09c-0b11-4686-b132-20d9791bfb16/boy_bg.jpg' sx={{width:'100%'}}>
 
         </Box>
         <ContentStyle>
           <motion.div variants={varFadeInRight}>
-            <Typography variant={matches ? 'h2' : 'h3'} className='flux'>Fantastic NFT<br />Club</Typography>
+            <Typography variant={matches ? 'h2' : 'h3'} className='flux'>The good people</Typography>
           </motion.div>
 
         </ContentStyle>
