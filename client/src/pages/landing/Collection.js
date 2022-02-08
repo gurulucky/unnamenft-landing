@@ -29,7 +29,7 @@ const Scroll = styled(Box)(() => ({
             backgroundPosition: '0 0'
         },
         '100%': {
-            backgroundPosition: '-5120px 0'
+            backgroundPosition: '-768px 0'
         }
     }
 }));
@@ -37,14 +37,14 @@ const Scroll = styled(Box)(() => ({
 const Scroll_2 = styled(Box)(() => ({
     height: 256,
     background: 'url(https://ucarecdn.com/c6da352c-993e-4948-80a1-b1e99cbab7e9/ss.jpg)',
-    backgroundSize: '5120px 256px',
+    backgroundSize: '768px 254px',
     animation: 'mosaic 40s linear infinite',
     '@keyframes mosaic': {
         '0%': {
             backgroundPosition: '0 0'
         },
         '100%': {
-            backgroundPosition: '-5120px 0'
+            backgroundPosition: '-768px 0'
         }
     }
 }));
