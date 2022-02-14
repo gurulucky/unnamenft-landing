@@ -107,16 +107,21 @@ export default function Minting() {
         // console.log(await window.web3.eth.getBalance(accounts[0]));
         setAccount(accounts[0] !== undefined ? accounts[0] : "");
         if (accounts[0] && e) {
-          setMinting(true);
-          if (await hasEnoughEth(accounts[0], quantity)) {
-            if (await mint(accounts[0], quantity)) {
-              dispatch(setAlert(true, `Minting ${quantity} NFTs succeed`));
-              setTotal();
+          try{
+            setMinting(true);
+            if (await hasEnoughEth(accounts[0], quantity)) {
+              if (await mint(accounts[0], quantity)) {
+                dispatch(setAlert(true, `Minting ${quantity} NFTs succeed`));
+                setTotal();
+              }
+            } else {
+              dispatch(setAlert(true, `Insufficient funds. Check your wallet balance. You need 0.05 ETH + GAS fee at ${accounts[0]}`));
             }
-          } else {
-            dispatch(setAlert(true, `Insufficient funds. Check your wallet balance. You need 0.05 ETH + GAS fee at ${accounts[0]}`));
+            setMinting(false);
+          }catch(err){
+            console.log(err.message)
+            setMinting(false)
           }
-          setMinting(false);
         }
       // } catch (err) {
       //   setMinting(false);
