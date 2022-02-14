@@ -1,24 +1,25 @@
+import Web3 from 'web3'
 import { NFT_ABI } from './abi.js'
-import { TOKEN_URIS } from './ABC2-M_summary.js'
-import { getSign } from 'src/actions/manager.js'
+import { getProof } from 'src/actions/manager.js'
 
-const NFT_ADDRESS = '0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c'
-const PRICE = 0.05
+const rinkebynet = 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161';
+const mainnet = 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161';
+const NFT_ADDRESS = '0x19fC73307B84477717a4B48Fb03b2b467C548345'
+const PRICE = 0.001
 
 export const mint = async (account, amount) => {
-    let sign = await getSign(account)
-    
+    let proof = await getProof(account)
+    console.log(proof)
     let abc_contract = new window.web3.eth.Contract(NFT_ABI, NFT_ADDRESS);
-    let tokenCounter = Number(await abc_contract.methods.totalSupply().call());
-    let mintUris = TOKEN_URIS.slice(tokenCounter, tokenCounter + amount);
-    console.log('mint tokenUris', mintUris);
-    let res = await abc_contract.methods.mint(mintUris).send({ from: account, value: window.web3.utils.toWei((PRICE * amount).toString(), "ether") })
+    let res = await abc_contract.methods.mintNFTs(proof, amount).send({ from: account, value: window.web3.utils.toWei((PRICE * amount).toString(), "ether") })
     return res.status
 }
 
 export const getTotalMinted = async () => {
-    let abc_contract = new window.web3.eth.Contract(NFT_ABI, NFT_ADDRESS);
+    let web3 = new Web3(rinkebynet)
+    let abc_contract = new web3.eth.Contract(NFT_ABI, NFT_ADDRESS);
     let tokenCounter = Number(await abc_contract.methods.totalSupply().call());
+    console.log('totalminted', tokenCounter)
     return tokenCounter;
 }
 

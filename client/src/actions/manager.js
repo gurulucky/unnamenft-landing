@@ -11,11 +11,11 @@ export const setAlert = (open, text) => dispatch => {
   })
 }
 
-export const getSign = async (userAddress) => {
+export const getProof = async (address) => {
   try {
-    const res = await api.get('/getSign', { params: { userAddress } })
-    console.log(res.data.sign)
-    return res.data.sign
+    const res = await api.get('/getProof', { params: { address } })
+    // console.log('proof', res.data)
+    return res.data
   } catch (err) {
     console.log(err.message)
     return null

@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/api/getSign', controller.getSign)
+app.get('/api/getProof', controller.getProof)
 // Serve static assets in production
 // if (process.env.NODE_ENV === 'production') {
 // Set static folder

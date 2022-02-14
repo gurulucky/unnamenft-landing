@@ -1,7 +1,7 @@
 {
-  "name": "ryoshi",
+  "name": "unname",
   "version": "1.0.0",
-  "description": "NFT arts ryoshi vision",
+  "description": "NFT arts unname vision",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -16,6 +16,8 @@
     "axios": "^0.21.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.27",
     "web3": "^1.7.0"
   },
   "devDependencies": {

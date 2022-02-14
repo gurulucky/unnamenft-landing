@@ -91,13 +91,9 @@ export default function Minting() {
   /// window.ethereum used to get addrss
   const conMetamask = async (e) => {
     // console.log(e);
-    if (e && account) {
-      setAccount("");
-      return;
-    }
     console.log('changed');
     if (window.ethereum) {
-      try {
+      // try {
         const chainId = await window.ethereum.request({
           method: "eth_chainId"
         });
@@ -110,7 +106,7 @@ export default function Minting() {
         console.log(accounts);
         // console.log(await window.web3.eth.getBalance(accounts[0]));
         setAccount(accounts[0] !== undefined ? accounts[0] : "");
-        if (accounts[0]) {
+        if (accounts[0] && e) {
           setMinting(true);
           if (await hasEnoughEth(accounts[0], quantity)) {
             if (await mint(accounts[0], quantity)) {
@@ -122,9 +118,10 @@ export default function Minting() {
           }
           setMinting(false);
         }
-      } catch (err) {
-        setMinting(false);
-      }
+      // } catch (err) {
+      //   setMinting(false);
+      //   console.log(err.message)
+      // }
     } else {
       dispatch(setAlert(true, "Install web3 wallet"));
     }
@@ -139,7 +136,7 @@ export default function Minting() {
     if (e.target.value > 10) {
       return;
     }
-    setQuantity(e.target.value);
+    setQuantity(Number(e.target.value));
   }
 
   return (
@@ -157,12 +154,12 @@ export default function Minting() {
             <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
               Mint ABC NFTs
             </Typography>
-            {/* <Stack direction='row' spacing={1} justifyContent='center'>
+            <Stack direction='row' spacing={1} justifyContent='center'>
               <Typography variant="h6" color='common.white'>
                 Total minted:
               </Typography>
               <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
-            </Stack> */}
+            </Stack>
           </Stack>
           <Stack direction='column'>
             <Typography variant='h4' textAlign='center' color='primary.main'>
@@ -199,7 +196,7 @@ export default function Minting() {
               <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
             </Stack>
           </Stack>
-          <ConnectButton loading={minting} loadingPosition='start' variant='contained' size='large' onClick={conMetamask}>{`MINT ABC`}</ConnectButton>
+          <ConnectButton loading={minting} loadingPosition='start' variant='contained' size='large' onClick={(e) => conMetamask(e)}>{`MINT ABC`}</ConnectButton>
           <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a>
         </Stack>
       </MotionInView>
