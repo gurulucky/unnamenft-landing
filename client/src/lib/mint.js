@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Web3 from 'web3'
 import { NFT_ABI } from './abi.js'
 import { getProof } from 'src/actions/manager.js'

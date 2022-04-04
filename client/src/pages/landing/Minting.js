@@ -34,7 +34,7 @@ const ButtonStyle = styled(Button)(({ theme }) => (
   {
     borderRadius: 0,
     minWidth: '10px',
-    backgroundColor: '#0f2938'
+    backgroundColor: '#f4b9b2'
   }
 ));
 
@@ -151,37 +151,38 @@ export default function Minting() {
           sx={{
             p: 3,
             border: '1px solid #1CCAFF',
-            backgroundImage: 'repeating-linear-gradient(45deg,#0b1414,#0b1414 10px,#061724 10px,#061724 20px)'
+            // backgroundImage: 'repeating-linear-gradient(45deg,#0b1414,#0b1414 10px,#061724 10px,#061724 20px)'
+            backgroundColor: '#e5b181'
           }}
           spacing={5} alignItems='center'
         >
           <Stack direction='column'>
             <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
-              Mint ABC NFTs
+              Mint Your NFTs
             </Typography>
             <Stack direction='row' spacing={1} justifyContent='center'>
-              <Typography variant="h6" color='common.white'>
+              <Typography variant="h6" color='secondary.main'>
                 Total minted:
               </Typography>
               <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
             </Stack>
           </Stack>
-          <Stack direction='column'>
+          {/* <Stack direction='column'>
             <Typography variant='h4' textAlign='center' color='primary.main'>
               Presale will be start after.
             </Typography>
             <TimerStyle textAlign='center' color='primary.main'>
               {`${countdown.days}:${countdown.hours}:${countdown.minutes}:${countdown.seconds}`}
-              {/* Coming Soon */}
+              
             </TimerStyle>
-          </Stack>
+          </Stack> */}
 
           <Stack direction='column'>
-            <Typography variant='h6' color='common.white' textAlign='center'>0.05 Eth + Gas fee</Typography>
-            <Typography variant='h6' color='common.white' textAlign='center'>Max 10 ABCs per transactions</Typography>
+            <Typography variant='h6' color='secondary.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
+            <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
           </Stack>
           <Stack direction={isDesktop ? 'row' : 'column'} justifyContent='center' spacing={1}>
-            <Stack direction='row' sx={{ border: '1px solid #0E77B7', p: '5px', backgroundColor: '#0f2938' }}>
+            <Stack direction='row' sx={{ border: '1px solid #7dbbc3', p: '5px' }}>
               <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity - 1 > 0 ? quantity - 1 : 1)}>-</ButtonStyle>
               <InputBase variant='outlined' type='number'
                 fullWidth={true}
@@ -195,13 +196,12 @@ export default function Minting() {
               <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity + 1 <= 10 ? quantity + 1 : 10)}>+</ButtonStyle>
             </Stack>
             <Stack direction='row' spacing={1}>
-
               <ButtonStyle variant='outlined' onClick={() => setQuantity(3)}>3</ButtonStyle>
               <ButtonStyle variant='outlined' onClick={() => setQuantity(5)}>5</ButtonStyle>
               <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
             </Stack>
           </Stack>
-          <ConnectButton loading={minting} loadingPosition='start' variant='contained' size='large' onClick={(e) => conMetamask(e)}>{`MINT ABC`}</ConnectButton>
+          <ConnectButton loading={minting} loadingPosition='start' variant='contained' size='large' onClick={(e) => conMetamask(e)}>{`MINT`}</ConnectButton>
           <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a>
         </Stack>
       </MotionInView>

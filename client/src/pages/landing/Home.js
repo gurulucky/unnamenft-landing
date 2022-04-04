@@ -72,7 +72,7 @@ export default function Home() {
         </Box>
         <ContentStyle>
           <motion.div variants={varFadeInRight}>
-            <Typography variant={matches ? 'h2' : 'h3'} className='flux'>The good people</Typography>
+            <Typography variant={matches ? 'h2' : 'h3'} className='flux'>GOOD PEOPLE</Typography>
           </motion.div>
 
         </ContentStyle>

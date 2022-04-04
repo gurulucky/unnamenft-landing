@@ -1,3 +1,4 @@
+/* eslint-disable */
 // i18n
 import './locales/i18n';
 

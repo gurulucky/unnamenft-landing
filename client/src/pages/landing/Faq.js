@@ -132,8 +132,9 @@ export default function Faq() {
             FAQ_DATA.map((item, index) =>
               <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}
                 sx={{
-                  border: '1px solid #1CCAFF',
-                  backgroundImage: 'repeating-linear-gradient(45deg,#0b1414,#0b1414 10px,#061724 10px,#061724 20px)'
+                  border: '1px solid #7dbbc3',
+                  // backgroundImage: 'repeating-linear-gradient(45deg,#0b1414,#0b1414 10px,#061724 10px,#061724 20px)'
+                  backgroundColor:'primary.dark'
                 }}
               >
                 <AccordionSummary

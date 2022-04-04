@@ -34,7 +34,7 @@ function MenuDesktopItem({ item, pathname, isHome,isOffset }) {
       smooth={true}
       to={path}
       sx={{
-        ...(isHome && { color: 'common.white' }),
+        ...(isHome && { color: 'text.primary' }),
         ...(isOffset && { color: 'text.primary' }),
         ...(isActive && { color: 'primary.main' })
       }}
