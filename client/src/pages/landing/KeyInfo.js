@@ -4,22 +4,22 @@ import { alpha, useTheme, styled } from '@material-ui/core/styles';
 // import { Box, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import {Stack} from '@material-ui/core'
 //
-import {MotionInView, varFadeInDown } from '../../components/animate';
+import { MotionInView, varFadeInDown } from '../../components/animate';
 
 // ----------------------------------------------------------------------
 const KEY_INFO = [
-  ['Release Date', "TBA"],
   ['Total number of NFTs', '10,000'],
-  ['NFTs withheld for sale', '500 for giveaways, marketing and the team'],
-  ['Price', '0.05 ETH'],
-  ['Token type', 'ERC-721'],
-  ['Blockchain', 'Ethereum'],
-  ['Unlockable content', 'Yes, high-resolution image'],
-  ['File hosting', 'IPFS'],
-  ['Royalties', '7% to fund  ongoing and new projects'],
-  ['Reveal type', 'Instant'],
-  ['Smart contract', 'https://etherscan...']
+  ['SKIN', '27'],
+  ['BACKGROUND', '13'],
+  ['EYES', '42'],
+  ['MOUTH', '43'],
+  ['CLOTHES', '39'],
+  ['HEAD ACCESSORY', '25'],
+  ['FIN', '11'],
+  ['OTHER', '22'],
+  ['LEGENDARY SHARK', '8']
 ];
 
 const Root = styled(Box)`
@@ -46,9 +46,9 @@ const TableStyle = styled('table')(({ theme }) => ({
 }));
 
 const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(10,3),
+  padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
-    padding: theme.spacing(10,15)
+    padding: theme.spacing(10, 15)
   },
   backgroundImage:
     theme.palette?.mode === 'light'
@@ -78,22 +78,25 @@ export default function KeyInfo() {
     <RootStyle>
       <MotionInView variants={varFadeInDown}>
         <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center', mb: 3 }}>
-          Key Info
+          RARITY
         </Typography>
       </MotionInView>
       <Root sx={{ maxWidth: '100%' }}>
-        <TableStyle>
-          <tbody>
-            {
-              KEY_INFO.map(info =>
-                <tr>
-                  <td><Typography variant='h6'>{info[0]}</Typography> </td>
-                  <td><Typography variant='h6'>{info[1]}</Typography> </td>
-                </tr>
-              )
-            }
-          </tbody>
-        </TableStyle>
+        <Stack direction='row' spacing={1}>
+          <TableStyle>
+            <tbody>
+              {
+                KEY_INFO.map(info =>
+                  <tr>
+                    <td><Typography variant='h6'>{info[0]}</Typography> </td>
+                    <td><Typography variant='h6'>{info[1]}</Typography> </td>
+                  </tr>
+                )
+              }
+            </tbody>
+          </TableStyle>
+          <Box component='img' src='/static/RarityTable.png' width='500px'/>
+        </Stack>
       </Root>
     </RootStyle>
   );

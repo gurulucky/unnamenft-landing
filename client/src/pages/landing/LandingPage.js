@@ -65,7 +65,7 @@ export default function LandingPage() {
           {/* <Team /> */}
         </Stack>
         <Stack id='key'>
-          {/* <KeyInfo /> */}
+          <KeyInfo />
         </Stack>
         <Stack id="roadmap">
           <Roadmap />
