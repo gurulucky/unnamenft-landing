@@ -4,7 +4,7 @@ import { alpha, useTheme, styled } from '@material-ui/core/styles';
 // import { Box, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
-import {Stack} from '@material-ui/core'
+import { Stack } from '@material-ui/core'
 //
 import { MotionInView, varFadeInDown } from '../../components/animate';
 
@@ -39,9 +39,10 @@ const TableStyle = styled('table')(({ theme }) => ({
   borderCollapse: 'collapse',
   // width:'100%',
   maxWidth: '800px',
+  width:'100%',
   [theme.breakpoints.up('md')]: {
-    margin: 'auto',
-    width: '100%'
+    // margin: 'auto',
+    width: '50%'
   }
 }));
 
@@ -82,20 +83,24 @@ export default function KeyInfo() {
         </Typography>
       </MotionInView>
       <Root sx={{ maxWidth: '100%' }}>
-        <Stack direction='row' spacing={1}>
-          <TableStyle>
-            <tbody>
-              {
-                KEY_INFO.map(info =>
-                  <tr>
-                    <td><Typography variant='h6'>{info[0]}</Typography> </td>
-                    <td><Typography variant='h6'>{info[1]}</Typography> </td>
-                  </tr>
-                )
-              }
-            </tbody>
-          </TableStyle>
-          <Box component='img' src='/static/RarityTable.png' width='500px'/>
+        <Stack direction={{ xs:'column', md:'row'}} spacing={1} sx={{width:'100%'}}>
+          {/* <Stack sx={{ width: { md: '50%', xs: '100%' } }}> */}
+            <TableStyle>
+              <tbody>
+                {
+                  KEY_INFO.map(info =>
+                    <tr>
+                      <td><Typography variant='h6'>{info[0]}</Typography> </td>
+                      <td><Typography variant='h6'>{info[1]}</Typography> </td>
+                    </tr>
+                  )
+                }
+              </tbody>
+            </TableStyle>
+          {/* </Stack> */}
+          <Stack sx={{ width: { xs: '100%',  md: '50%' } }}>
+            <Box component='img' src='/static/RarityTable.png' width='auto'/>
+          </Stack>
         </Stack>
       </Root>
     </RootStyle>
