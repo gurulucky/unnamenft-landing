@@ -1,4 +1,8 @@
 /* CSS */
+.nav-menu {
+  transform: translate3d(0, 2px, 0);
+}
+
 .social-button {
   background-color: #daedbd;
   border: 2px solid #422800;

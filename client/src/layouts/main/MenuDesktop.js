@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { NavLink as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@material-ui/core/styles';
-import {Link,Stack} from '@material-ui/core';
+import { Link, Stack } from '@material-ui/core';
 
 // ----------------------------------------------------------------------
 
@@ -16,13 +16,14 @@ const LinkStyle = styled(Link)(({ theme }) => ({
     duration: theme.transitions.duration.shortest
   }),
   '&:hover': {
-    opacity: 0.48,
-    textDecoration: 'none'
+    // opacity: 0.48,
+    textDecoration: 'none',
+    transform: 'translate3d(0, 2px, 0)'
   }
 }));
 
 
-function MenuDesktopItem({ item, pathname, isHome,isOffset }) {
+function MenuDesktopItem({ item, pathname, isHome, isOffset }) {
   const { title, path } = item;
   const isActive = pathname === path;
 
@@ -37,7 +38,7 @@ function MenuDesktopItem({ item, pathname, isHome,isOffset }) {
         ...(isHome && { color: 'text.primary' }),
         ...(isOffset && { color: 'text.primary' }),
         ...(isActive && { color: 'primary.main' }),
-        color:'text.secondary'
+        color: 'text.secondary'
       }}
     >
       {title}
