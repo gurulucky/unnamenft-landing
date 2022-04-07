@@ -25,7 +25,7 @@ export default function AlertDialog() {
             <Dialog open={open} onClose={handleClose}>
                 {/* <DialogTitle>Use Google's location service?</DialogTitle> */}
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description" sx={{color:'white', fontSize:'18px'}}>
+                    <DialogContentText id="alert-dialog-description" sx={{ color: '#422800', fontSize: '18px' }}>
                         {text}
                     </DialogContentText>
                 </DialogContent>
