@@ -36,7 +36,8 @@ function MenuDesktopItem({ item, pathname, isHome,isOffset }) {
       sx={{
         ...(isHome && { color: 'text.primary' }),
         ...(isOffset && { color: 'text.primary' }),
-        ...(isActive && { color: 'primary.main' })
+        ...(isActive && { color: 'primary.main' }),
+        color:'text.secondary'
       }}
     >
       {title}

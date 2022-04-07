@@ -25,7 +25,7 @@ const KEY_INFO = [
 const Root = styled(Box)`
   td,
   th {
-    border: 1px solid #1CCAFF;
+    border-bottom: 1px solid #1CCAFF;
     text-align: left;
     padding: 8px;
   }
@@ -70,7 +70,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function KeyInfo() {
+export default function Rarity() {
   const theme = useTheme();
   const isLight = theme.palette?.mode === 'light';
   const isRTL = theme.direction === 'rtl';

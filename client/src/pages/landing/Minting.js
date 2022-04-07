@@ -11,7 +11,7 @@ import Stack from '@material-ui/core/Stack'
 import Button from '@material-ui/core/Button'
 // import { LoadingButton } from '@material-ui/lab';
 import LoadingButton from '@material-ui/lab/LoadingButton'
-import { InputBase } from '@material-ui/core';
+import { InputBase, Box } from '@material-ui/core';
 //
 import { MotionInView, varFadeInDown } from '../../components/animate';
 import useCountdown from '../../hooks/useCountdown';
@@ -24,22 +24,25 @@ const MAINNET_CHAINID = 1;
 
 const RootStyle = styled('div')(({ theme }) => ({
   // paddingTop: theme.spacing(15),
-  padding: theme.spacing(2),
+  backgroundImage: 'url("https://shkarysharks.com/images/getyourshark.png")',
+  padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
+    backgroundSize: '100%',
     padding: theme.spacing(10, 15)
   }
 }));
 
 const ButtonStyle = styled(Button)(({ theme }) => (
   {
-    borderRadius: 0,
+    borderRadius: '50%',
+    borderColor: '#422800',
     minWidth: '10px',
-    backgroundColor: '#f4b9b2'
+    backgroundColor: '#daedbd',
+    color: '#422800'
   }
 ));
 
 const ConnectButton = styled(LoadingButton)(({ theme }) => ({
-  borderRadius: 0,
   width: '200px'
 }));
 
@@ -94,35 +97,35 @@ export default function Minting() {
     console.log('changed');
     if (window.ethereum) {
       // try {
-        const chainId = await window.ethereum.request({
-          method: "eth_chainId"
-        });
-        if (Number(chainId) !== (NETWORK === 'rinkeby' ? RINKEBY_CHAINID : MAINNET_CHAINID)) {
-          dispatch(setAlert(true, `Connect to ${NETWORK} network on metamask.`));
-          setAccount("");
-          return;
-        }
-        const accounts = await window.ethereum.enable();
-        console.log(accounts);
-        // console.log(await window.web3.eth.getBalance(accounts[0]));
-        setAccount(accounts[0] !== undefined ? accounts[0] : "");
-        if (accounts[0] && e) {
-          try{
-            setMinting(true);
-            if (await hasEnoughEth(accounts[0], quantity)) {
-              if (await mint(accounts[0], quantity)) {
-                dispatch(setAlert(true, `Minting ${quantity} NFTs succeed`));
-                setTotal();
-              }
-            } else {
-              dispatch(setAlert(true, `Insufficient funds. Check your wallet balance. You need 0.05 ETH + GAS fee at ${accounts[0]}`));
+      const chainId = await window.ethereum.request({
+        method: "eth_chainId"
+      });
+      if (Number(chainId) !== (NETWORK === 'rinkeby' ? RINKEBY_CHAINID : MAINNET_CHAINID)) {
+        dispatch(setAlert(true, `Connect to ${NETWORK} network on metamask.`));
+        setAccount("");
+        return;
+      }
+      const accounts = await window.ethereum.enable();
+      console.log(accounts);
+      // console.log(await window.web3.eth.getBalance(accounts[0]));
+      setAccount(accounts[0] !== undefined ? accounts[0] : "");
+      if (accounts[0] && e) {
+        try {
+          setMinting(true);
+          if (await hasEnoughEth(accounts[0], quantity)) {
+            if (await mint(accounts[0], quantity)) {
+              dispatch(setAlert(true, `Minting ${quantity} NFTs succeed`));
+              setTotal();
             }
-            setMinting(false);
-          }catch(err){
-            console.log(err.message)
-            setMinting(false)
+          } else {
+            dispatch(setAlert(true, `Insufficient funds. Check your wallet balance. You need 0.05 ETH + GAS fee at ${accounts[0]}`));
           }
+          setMinting(false);
+        } catch (err) {
+          console.log(err.message)
+          setMinting(false)
         }
+      }
       // } catch (err) {
       //   setMinting(false);
       //   console.log(err.message)
@@ -147,27 +150,25 @@ export default function Minting() {
   return (
     <RootStyle>
       <MotionInView variants={varFadeInDown}>
-        <Stack direction='column'
-          sx={{
-            p: 3,
-            border: '1px solid #1CCAFF',
-            // backgroundImage: 'repeating-linear-gradient(45deg,#0b1414,#0b1414 10px,#061724 10px,#061724 20px)'
-            backgroundColor: '#e5b181'
-          }}
-          spacing={5} alignItems='center'
-        >
-          <Stack direction='column'>
-            <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
-              Mint Your NFTs
-            </Typography>
-            <Stack direction='row' spacing={1} justifyContent='center'>
-              <Typography variant="h6" color='secondary.main'>
-                Total minted:
+        <Stack direction={{ xs: 'column', md: 'row' }} sx={{ width: '100%' }}>
+          <Box sx={{ width: { xs: '100%', md: '50%' } }} >
+
+          </Box>
+          <Stack direction='column'
+            spacing={5} alignItems='center' sx={{ width: { xs: '100%', md: '50%' } }}
+          >
+            <Stack direction='column'>
+              <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
+                Mint Your NFTs
               </Typography>
-              <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
+              <Stack direction='row' spacing={1} justifyContent='center'>
+                <Typography variant="h6" color='text.main'>
+                  Total minted:
+                </Typography>
+                <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
+              </Stack>
             </Stack>
-          </Stack>
-          {/* <Stack direction='column'>
+            {/* <Stack direction='column'>
             <Typography variant='h4' textAlign='center' color='primary.main'>
               Presale will be start after.
             </Typography>
@@ -177,32 +178,37 @@ export default function Minting() {
             </TimerStyle>
           </Stack> */}
 
-          <Stack direction='column'>
-            <Typography variant='h6' color='secondary.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
-            <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
-          </Stack>
-          <Stack direction={isDesktop ? 'row' : 'column'} justifyContent='center' spacing={1}>
-            <Stack direction='row' sx={{ border: '1px solid #7dbbc3', p: '5px' }}>
-              <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity - 1 > 0 ? quantity - 1 : 1)}>-</ButtonStyle>
-              <InputBase variant='outlined' type='number'
-                fullWidth={true}
-                inputProps={{
-                  min: 1, max: 10,
-                  sx: { textAlign: 'center' },
-                }}
-                value={quantity}
-                onChange={changeQuantity}
-              />
-              <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity + 1 <= 10 ? quantity + 1 : 10)}>+</ButtonStyle>
+            <Stack direction='column'>
+              <Typography variant='h6' color='text.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
+              <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
             </Stack>
-            <Stack direction='row' spacing={1}>
-              <ButtonStyle variant='outlined' onClick={() => setQuantity(3)}>3</ButtonStyle>
-              <ButtonStyle variant='outlined' onClick={() => setQuantity(5)}>5</ButtonStyle>
-              <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
+            <Stack direction={isDesktop ? 'row' : 'column'} justifyContent='center' spacing={1}>
+              <Stack direction='row' sx={{ border: '1px solid #422800', backgroundColor: '#e5b181', borderRadius: '25px', p: '5px' }}>
+                <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity - 1 > 0 ? quantity - 1 : 1)}>-</ButtonStyle>
+                <InputBase variant='outlined' type='number'
+                  fullWidth={true}
+                  inputProps={{
+                    min: 1, max: 10,
+                    sx: { textAlign: 'center' },
+                  }}
+                  value={quantity}
+                  onChange={changeQuantity}
+                />
+                <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity + 1 <= 10 ? quantity + 1 : 10)}>+</ButtonStyle>
+              </Stack>
+              <Stack direction='row' spacing={1}>
+                <ButtonStyle variant='outlined' onClick={() => setQuantity(3)}>&nbsp;3&nbsp;</ButtonStyle>
+                <ButtonStyle variant='outlined' onClick={() => setQuantity(5)}>&nbsp;5&nbsp;</ButtonStyle>
+                <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
+              </Stack>
             </Stack>
+            <ConnectButton className='social-button' loading={minting} loadingPosition='start' startIcon={<></>} variant='contained' size='large' onClick={(e) => conMetamask(e)} >
+              <span style={{ paddingBottom: '5px' }}>
+                MINT
+              </span>
+            </ConnectButton>
+            {/* <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a> */}
           </Stack>
-          <ConnectButton loading={minting} loadingPosition='start' variant='contained' size='large' onClick={(e) => conMetamask(e)}>{`MINT`}</ConnectButton>
-          <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a>
         </Stack>
       </MotionInView>
     </RootStyle >

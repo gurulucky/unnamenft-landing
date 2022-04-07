@@ -1,6 +1,6 @@
 /* eslint-disable */
 // material
-import { useTheme, styled } from '@material-ui/core/styles';
+import { useTheme, styled, alpha } from '@material-ui/core/styles';
 // import {  Grid, Button, Container, Typography, Stack, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
@@ -15,10 +15,14 @@ import LoyaltyIcon from '@material-ui/icons/Loyalty';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(10,3),
+  padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15)
-  }
+  },
+  backgroundImage:
+    theme.palette?.mode === 'light'
+      ? `linear-gradient(180deg, ${alpha('#e5b181', 0)} 0%, '#e5b181' 100%)`
+      : 'none'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -100,35 +104,35 @@ export default function Membership() {
 
   return (
     <RootStyle>
-        <Grid container spacing={5} justifyContent="center">
-          <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
-            <ContentStyle>
-              <MotionInView variants={varFadeInUp}>
-                <Typography className='flux_title' variant="h2" color='primary.main' sx={{ mb: 3 }}>
-                  Unknow NFT Values
-                </Typography>
-                <List dense={false}>
-                  {
-                    MEMBERSHIP_TEXT.map(item =>
-                      <ListItem>
-                        <ListItemIcon>
-                          <LoyaltyIcon sx={{color:'primary.main'}}/>
-                        </ListItemIcon>
-                        <Typography variant='h6'>{item}</Typography>
-                      </ListItem>
-                    )
-                  }
-                </List>
-              </MotionInView>
-            </ContentStyle>
-          </Grid>
-
-          <Grid item xs={12} md={6} dir="ltr">
-            <ContentStyle>
-                  <Box component='img' src='https://ucarecdn.com/2f707ef3-0598-46e7-a61e-33a6387dd655/boy.gif' sx={{width:'100%'}}/>
-            </ContentStyle>
-          </Grid>
+      <Grid container spacing={5} justifyContent="center">
+        <Grid item xs={12} md={6} dir="ltr">
+          <ContentStyle>
+            <Typography className='flux_title' variant="h2" color='primary.main' sx={{ mb: 3 }}>
+              BENEFITS
+            </Typography>
+            <Box component='img' src='https://ucarecdn.com/2f707ef3-0598-46e7-a61e-33a6387dd655/boy.gif' sx={{ width: '100%' }} />
+          </ContentStyle>
         </Grid>
+        <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
+          <ContentStyle>
+            <MotionInView variants={varFadeInUp}>
+              <List dense={false}>
+                {
+                  MEMBERSHIP_TEXT.map(item =>
+                    <ListItem>
+                      <ListItemIcon>
+                        <LoyaltyIcon sx={{ color: 'primary.main' }} />
+                      </ListItemIcon>
+                      <Typography variant='h6'>{item}</Typography>
+                    </ListItem>
+                  )
+                }
+              </List>
+            </MotionInView>
+          </ContentStyle>
+        </Grid>
+
+      </Grid>
     </RootStyle>
   );
 }

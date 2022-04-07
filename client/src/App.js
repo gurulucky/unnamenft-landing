@@ -14,7 +14,7 @@ import LoadingScreen from './components/LoadingScreen';
 import NotistackProvider from './components/NotistackProvider';
 import ThemePrimaryColor from './components/ThemePrimaryColor';
 import ThemeLocalization from './components/ThemeLocalization';
-
+import './App.css'
 // ----------------------------------------------------------------------
 
 export default function App() {

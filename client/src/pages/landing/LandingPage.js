@@ -4,15 +4,15 @@ import { useLocation } from 'react-router';
 import { scroller } from 'react-scroll';
 // material
 import { styled } from '@material-ui/core/styles';
-import  Stack  from '@material-ui/core/Stack';
+import Stack from '@material-ui/core/Stack';
 // components
 import Page from '../../components/Page';
 import About from './About'
 import Collection from './Collection'
 import Faq from './Faq'
 import Home from './Home'
-import KeyInfo from './KeyInfo'
-import Membership from './Membership'
+import Rarity from './Rarity'
+import Membership from './Utility'
 import Minting from './Minting'
 import Roadmap from './Roadmap'
 import Team from './Team'
@@ -51,22 +51,23 @@ export default function LandingPage() {
           <Minting />
 
         </Stack>
-        <Stack id='about'>
+        {/* <Stack id='about'>
 
           <About />
-        </Stack>
-        <Stack id='collection'>
+        </Stack> */}
+        {/* <Stack id='collection'>
 
           <Collection />
+        </Stack> */}
+        <Stack id='rarity'>
+          <Rarity />
         </Stack>
-        <Membership />
-        <Stack id='team'>
-
-          {/* <Team /> */}
+        <Stack id='utility'>
+          <Membership />
         </Stack>
-        <Stack id='key'>
-          <KeyInfo />
-        </Stack>
+        {/* <Stack id='team'>
+          <Team />
+        </Stack> */}
         <Stack id="roadmap">
           <Roadmap />
         </Stack>

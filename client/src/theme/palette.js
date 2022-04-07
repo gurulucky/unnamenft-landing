@@ -119,7 +119,7 @@ const COMMON = {
 const palette = {
   light: {
     ...COMMON,
-    text: { primary: '#de6b48', secondary: GREY[600], disabled: GREY[500] },
+    text: { primary: '#422800', secondary: '#de6b48', disabled: GREY[500] },
     background: { paper: '#fff', default: '#f4b9b2', neutral: GREY[200] },
     action: { active: GREY[600], ...COMMON.action }
   },
