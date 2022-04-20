@@ -30,7 +30,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   //   // alignItems: 'flex-start',
   //   // justifyContent:'center'
   // }
-  position: 'relative',
+  // position: 'relative',
   // marginTop: '64px',
   // [theme.breakpoints.up('md')]: {
   // top: 0,
@@ -62,12 +62,12 @@ export default function Home() {
   return (
     <>
       <RootStyle >
-        {
+        {/* {
           isDesktop ?
             <Box component="img" src='/static/home/home.jpg' width='100%' />
             :
             <Box component="img" src='/static/home/home_xs.jpg' width='100%' />
-        }
+        } */}
         <ContentStyle>
           <motion.div variants={varFadeInRight}>
             <Stack direction='column' alignItems='center' spacing={3}>

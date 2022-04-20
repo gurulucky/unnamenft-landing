@@ -51,10 +51,10 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 15)
   },
-  backgroundImage:
-    theme.palette?.mode === 'light'
-      ? `linear-gradient(180deg, ${alpha(theme.palette?.grey[300], 0)} 0%, ${theme.palette?.grey[300]} 100%)`
-      : 'none'
+  // backgroundImage:
+  //   theme.palette?.mode === 'light'
+  //     ? `linear-gradient(180deg, ${alpha(theme.palette?.grey[300], 0)} 0%, ${theme.palette?.grey[300]} 100%)`
+  //     : 'none'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -99,7 +99,7 @@ export default function Rarity() {
             </TableStyle>
           {/* </Stack> */}
           <Stack sx={{ width: { xs: '100%',  md: '50%' } }}>
-            <Box component='img' src='/static/RarityTable.png' width='auto'/>
+            <Box component='img' src='/static/RarityTable.jpg' width='auto'/>
           </Stack>
         </Stack>
       </Root>

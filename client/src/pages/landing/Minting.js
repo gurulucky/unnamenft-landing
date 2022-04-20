@@ -24,7 +24,7 @@ const MAINNET_CHAINID = 1;
 
 const RootStyle = styled('div')(({ theme }) => ({
   // paddingTop: theme.spacing(15),
-  backgroundImage: 'url("https://shkarysharks.com/images/getyourshark.png")',
+  // backgroundImage: 'url("https://shkarysharks.com/images/getyourshark.png")',
   padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
     backgroundSize: '100%',

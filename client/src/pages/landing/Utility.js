@@ -19,10 +19,10 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15)
   },
-  backgroundImage:
-    theme.palette?.mode === 'light'
-      ? `linear-gradient(180deg, ${alpha('#e5b181', 0)} 0%, '#e5b181' 100%)`
-      : 'none'
+  // backgroundImage:
+  //   theme.palette?.mode === 'light'
+  //     ? `linear-gradient(180deg, ${alpha('#e5b181', 0)} 0%, '#e5b181' 100%)`
+  //     : 'none'
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
