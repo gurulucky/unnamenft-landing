@@ -41,7 +41,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   // }
 }));
 
-const ContentStyle = styled((props) => <Stack alignItems='center' spacing={5} {...props} />)(({ theme }) => ({
+const ContentStyle = styled('div')(({ theme }) => ({
   zIndex: 10,
   top: '0px',
   textAlign: 'center',
@@ -51,7 +51,9 @@ const ContentStyle = styled((props) => <Stack alignItems='center' spacing={5} {.
   [theme.breakpoints.up('md')]: {
     // margin: 'unset',
     paddingTop: theme.spacing(70),
-  }
+  },
+  right: 0,
+  left: 0
 }));
 
 // ----------------------------------------------------------------------
@@ -70,7 +72,7 @@ export default function Home() {
         }
         <ContentStyle>
           <motion.div variants={varFadeInRight}>
-            <Stack direction='column' alignItems='center' spacing={3}>
+            <Stack direction='column' justifyContent='center' alignItems='center' spacing={3}>
               <Typography variant='h6' sx={{ width: { xs: '90%', md: '50%' } }}>
                 8,888 uniquely generated Shkary Sharks that have migrated to the cleaner and warmer network of Solana. Drawn by hand and assembled by code, no two Shkary Sharks are the same.
               </Typography>
