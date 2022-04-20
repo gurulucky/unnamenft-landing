@@ -150,12 +150,9 @@ export default function Minting() {
   return (
     <RootStyle>
       <MotionInView variants={varFadeInDown}>
-        <Stack direction={{ xs: 'column', md: 'row' }} sx={{ width: '100%' }}>
-          <Box sx={{ width: { xs: '100%', md: '50%' } }} >
-
-          </Box>
+        {/* <Stack direction={{ xs: 'column', md: 'row' }} sx={{ width: '100%' }}> */}
           <Stack direction='column'
-            spacing={5} alignItems='center' sx={{ width: { xs: '100%', md: '50%' } }}
+            spacing={5} alignItems='center'
           >
             <Stack direction='column'>
               <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
@@ -209,7 +206,7 @@ export default function Minting() {
             </ConnectButton>
             {/* <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a> */}
           </Stack>
-        </Stack>
+        {/* </Stack> */}
       </MotionInView>
     </RootStyle >
   );

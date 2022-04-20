@@ -30,7 +30,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   //   // alignItems: 'flex-start',
   //   // justifyContent:'center'
   // }
-  // position: 'relative',
+  position: 'relative',
   // marginTop: '64px',
   // [theme.breakpoints.up('md')]: {
   // top: 0,
@@ -46,11 +46,11 @@ const ContentStyle = styled((props) => <Stack alignItems='center' spacing={5} {.
   top: '0px',
   textAlign: 'center',
   position: 'absolute',
-  paddingTop: theme.spacing(10),
+  paddingTop: theme.spacing(50),
   paddingBottom: theme.spacing(15),
   [theme.breakpoints.up('md')]: {
     // margin: 'unset',
-    paddingTop: theme.spacing(20),
+    paddingTop: theme.spacing(70),
   }
 }));
 
@@ -62,16 +62,15 @@ export default function Home() {
   return (
     <>
       <RootStyle >
-        {/* {
+        {
           isDesktop ?
             <Box component="img" src='/static/home/home.jpg' width='100%' />
             :
-            <Box component="img" src='/static/home/home_xs.jpg' width='100%' />
-        } */}
+            <Box component="img" src='/static/home/home_xs.jpg' height='100%' />
+        }
         <ContentStyle>
           <motion.div variants={varFadeInRight}>
             <Stack direction='column' alignItems='center' spacing={3}>
-              <Typography color='text.secondary' variant='h2' >GOOD PEOPLE</Typography>
               <Typography variant='h6' sx={{ width: { xs: '90%', md: '50%' } }}>
                 8,888 uniquely generated Shkary Sharks that have migrated to the cleaner and warmer network of Solana. Drawn by hand and assembled by code, no two Shkary Sharks are the same.
               </Typography>

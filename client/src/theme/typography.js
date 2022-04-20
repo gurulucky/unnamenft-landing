@@ -18,7 +18,8 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = 'Varela Round, sans-serif'; // Google Font
+// const FONT_PRIMARY = 'Varela Round, sans-serif'; // Google Font
+const FONT_PRIMARY = 'Helvetica, sans-serif'; // Local Font
 // const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
 
 const typography = {
