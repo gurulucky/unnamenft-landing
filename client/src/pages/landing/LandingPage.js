@@ -8,6 +8,7 @@ import Stack from '@material-ui/core/Stack';
 // components
 import Page from '../../components/Page';
 import About from './About'
+import Future from './Future'
 import Collection from './Collection'
 import Faq from './Faq'
 import Home from './Home'
@@ -41,20 +42,27 @@ export default function LandingPage() {
     })
   })
   return (
-    <RootStyle title="Unknown NFT" id="move_top">
+    <RootStyle title="Good people" id="move_top">
       <Stack id='home'>
         <Home />
 
       </Stack>
       <ContentStyle>
+        <Stack id='about'>
+
+          <About />
+        </Stack>
+        <Stack id='future'>
+
+          <Future />
+        </Stack>
+        <Stack id="roadmap">
+          <Roadmap />
+        </Stack>
         <Stack id='mint'>
           <Minting />
 
         </Stack>
-        {/* <Stack id='about'>
-
-          <About />
-        </Stack> */}
         {/* <Stack id='collection'>
 
           <Collection />
@@ -65,12 +73,10 @@ export default function LandingPage() {
         <Stack id='utility'>
           <Membership />
         </Stack>
-        {/* <Stack id='team'>
+        <Stack id='team'>
           <Team />
-        </Stack> */}
-        <Stack id="roadmap">
-          <Roadmap />
         </Stack>
+
         <Stack id='faq'>
           <Faq />
 

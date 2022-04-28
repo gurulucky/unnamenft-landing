@@ -11,9 +11,9 @@ import { varFadeInUp, MotionInView } from '../../components/animate';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(10,3),
+  padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
-    padding: theme.spacing(7,15)
+    padding: theme.spacing(7, 15)
   },
   // backgroundImage:
   //   theme.palette?.mode === 'light'
@@ -24,8 +24,11 @@ const RootStyle = styled('div')(({ theme }) => ({
 const ContentStyle = styled('div')(({ theme }) => ({
   width: '100%',
   textAlign: 'center',
+  marginLeft:'auto',
+  marginRight:'auto',
   marginBottom: theme.spacing(7),
   [theme.breakpoints.up('md')]: {
+    width:'70%',
     textAlign: 'left',
     marginBottom: 0
   }
@@ -42,19 +45,6 @@ const COMMON = {
   opacity: 0
 };
 
-const variantScreenLeft = {
-  initial: COMMON,
-  animate: { ...COMMON, translateX: '-50%', translateY: 40, opacity: 1 }
-};
-const variantScreenCenter = {
-  initial: COMMON,
-  animate: { ...COMMON, opacity: 1 }
-};
-const variantScreenRight = {
-  initial: COMMON,
-  animate: { ...COMMON, translateX: '50%', translateY: -40, opacity: 1 }
-};
-
 // ----------------------------------------------------------------------
 
 export default function About() {
@@ -62,46 +52,33 @@ export default function About() {
 
   return (
     <RootStyle>
-      <Grid container spacing={5} justifyContent="center">
-        <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
-          <ContentStyle>
-            {/* <MHidden width='mdDown'> */}
-            <MotionInView variants={varFadeInUp}>
-              <Box component='img' src='https://ucarecdn.com/a6fcd01f-7781-4f4d-b522-069fb430bbbc/boy_1.JPG' sx={{width:'100%'}}/>
-            </MotionInView>
-
-            {/* </MHidden> */}
-          </ContentStyle>
-        </Grid>
-
-        <Grid item xs={12} md={6} dir="ltr">
-          <ContentStyle>
-
-            <MotionInView variants={varFadeInUp}>
-              <Typography variant="h2" color='primary.main' className='flux_title' sx={{ mb: 3, mt: { md: 8 } }}>
-                Forever
-              </Typography>
-              <Typography
-                variant='h6'
-                paragraph
-              >
-                In celebration of the contribution of your fellow  The Right Honourable Chief Justice  AC QC  Esq. has officially launched the   Club ().
-              </Typography>
-              <Typography
-                variant='h6'
-                paragraph
-              >
-                The   Club is a collection of 10,000 exclusive NFTs cohabiting in the shire of ville and the Ethereum blockchain being secured by a fearless smart contract that can never be altered or changed.
-              </Typography>
-              <Typography
-                variant='h6'
-                paragraph
-              > Each  NFT is completely unique, randomly generated from a selection of over 220 hand drawn  traits.  Ownership of an  NFT doubles as your membership to the highly exclusively   Club, which on its own brings bragging rights, a society of like-minded  socialites.
-              </Typography>
-            </MotionInView>
-          </ContentStyle>
-        </Grid>
-      </Grid>
+      <ContentStyle>
+        <MotionInView variants={varFadeInUp}>
+          <Typography variant="h2" color='primary.main' textAlign='center' sx={{ mb: 3, mt: { md: 8 } }}>
+            What are good people?
+          </Typography>
+          <Typography
+            variant='h4'
+            textAlign='center'
+            paragraph
+          >
+            The good people are the brainchild of Just Sandy ( Sandra ) Her goal was always to build a space to hang out and connect, create and vibe with likeminded people.
+          </Typography>
+          <Typography
+            variant='h4'
+            textAlign='center'
+            paragraph
+          >
+            With heavy influence of fashion and music, the long term goal is and always has been to keep pushing the boundaries of creation and see what magic we can create.
+          </Typography>
+          <Typography
+            variant='h4'
+            textAlign='center'
+            paragraph
+          > Here you’ll be able to follow the collective gang of creative intro and extroverts, living in their own little world they call home.
+          </Typography>
+        </MotionInView>
+      </ContentStyle>
     </RootStyle >
   );
 }

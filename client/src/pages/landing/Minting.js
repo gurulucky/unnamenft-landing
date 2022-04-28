@@ -151,21 +151,22 @@ export default function Minting() {
     <RootStyle>
       <MotionInView variants={varFadeInDown}>
         {/* <Stack direction={{ xs: 'column', md: 'row' }} sx={{ width: '100%' }}> */}
-          <Stack direction='column'
-            spacing={5} alignItems='center'
-          >
-            <Stack direction='column'>
-              <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
-                Mint Your NFTs
+        <Stack direction='column'
+          spacing={5} alignItems='center'
+        >
+          <Stack direction='column'>
+            <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
+              Mint Your NFTs
+            </Typography>
+            <Typography variant='h3' color='secondary.main' textAlign='center'>Coming soon</Typography>
+            {/* <Stack direction='row' spacing={1} justifyContent='center'>
+              <Typography variant="h6" color='text.main'>
+                Total minted:
               </Typography>
-              <Stack direction='row' spacing={1} justifyContent='center'>
-                <Typography variant="h6" color='text.main'>
-                  Total minted:
-                </Typography>
-                <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
-              </Stack>
-            </Stack>
-            {/* <Stack direction='column'>
+              <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
+            </Stack> */}
+          </Stack>
+          {/* <Stack direction='column'>
             <Typography variant='h4' textAlign='center' color='primary.main'>
               Presale will be start after.
             </Typography>
@@ -175,37 +176,37 @@ export default function Minting() {
             </TimerStyle>
           </Stack> */}
 
-            <Stack direction='column'>
-              <Typography variant='h6' color='text.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
-              <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
-            </Stack>
-            <Stack direction={isDesktop ? 'row' : 'column'} justifyContent='center' spacing={1}>
-              <Stack direction='row' sx={{ border: '1px solid #422800', backgroundColor: '#e5b181', borderRadius: '25px', p: '5px' }}>
-                <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity - 1 > 0 ? quantity - 1 : 1)}>-</ButtonStyle>
-                <InputBase variant='outlined' type='number'
-                  fullWidth={true}
-                  inputProps={{
-                    min: 1, max: 10,
-                    sx: { textAlign: 'center' },
-                  }}
-                  value={quantity}
-                  onChange={changeQuantity}
-                />
-                <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity + 1 <= 10 ? quantity + 1 : 10)}>+</ButtonStyle>
-              </Stack>
-              <Stack direction='row' spacing={1}>
-                <ButtonStyle variant='outlined' onClick={() => setQuantity(3)}>&nbsp;3&nbsp;</ButtonStyle>
-                <ButtonStyle variant='outlined' onClick={() => setQuantity(5)}>&nbsp;5&nbsp;</ButtonStyle>
-                <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
-              </Stack>
-            </Stack>
-            <ConnectButton className='social-button' loading={minting} loadingPosition='start' startIcon={<></>} variant='contained' size='large' onClick={(e) => conMetamask(e)} >
-              <span style={{ paddingBottom: '5px' }}>
-                MINT
-              </span>
-            </ConnectButton>
-            {/* <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a> */}
+          {/* <Stack direction='column'>
+            <Typography variant='h6' color='text.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
+            <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
           </Stack>
+          <Stack direction={isDesktop ? 'row' : 'column'} justifyContent='center' spacing={1}>
+            <Stack direction='row' sx={{ border: '1px solid #422800', backgroundColor: '#e5b181', borderRadius: '25px', p: '5px' }}>
+              <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity - 1 > 0 ? quantity - 1 : 1)}>-</ButtonStyle>
+              <InputBase variant='outlined' type='number'
+                fullWidth={true}
+                inputProps={{
+                  min: 1, max: 10,
+                  sx: { textAlign: 'center' },
+                }}
+                value={quantity}
+                onChange={changeQuantity}
+              />
+              <ButtonStyle variant='outlined' onClick={() => setQuantity(quantity + 1 <= 10 ? quantity + 1 : 10)}>+</ButtonStyle>
+            </Stack>
+            <Stack direction='row' spacing={1}>
+              <ButtonStyle variant='outlined' onClick={() => setQuantity(3)}>&nbsp;3&nbsp;</ButtonStyle>
+              <ButtonStyle variant='outlined' onClick={() => setQuantity(5)}>&nbsp;5&nbsp;</ButtonStyle>
+              <ButtonStyle variant='outlined' onClick={() => setQuantity(10)}>10</ButtonStyle>
+            </Stack>
+          </Stack>
+          <ConnectButton className='social-button' loading={minting} loadingPosition='start' startIcon={<></>} variant='contained' size='large' onClick={(e) => conMetamask(e)} >
+            <span style={{ paddingBottom: '5px' }}>
+              MINT
+            </span>
+          </ConnectButton> */}
+          {/* <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a> */}
+        </Stack>
         {/* </Stack> */}
       </MotionInView>
     </RootStyle >

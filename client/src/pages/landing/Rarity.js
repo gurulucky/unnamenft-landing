@@ -10,16 +10,16 @@ import { MotionInView, varFadeInDown } from '../../components/animate';
 
 // ----------------------------------------------------------------------
 const KEY_INFO = [
-  ['Total number of NFTs', '10,000'],
-  ['SKIN', '27'],
-  ['BACKGROUND', '13'],
-  ['EYES', '42'],
-  ['MOUTH', '43'],
-  ['CLOTHES', '39'],
-  ['HEAD ACCESSORY', '25'],
-  ['FIN', '11'],
-  ['OTHER', '22'],
-  ['LEGENDARY SHARK', '8']
+  ['Total number of NFTs', '4444'],
+  ['Skin', '20'],
+  ['Eyes', '5'],
+  ['Background', '20'],
+  ['Mouth', '16'],
+  ['Clothes', '35'],
+  ['Hands', '15'],
+  ['Eyewear', '12'],
+  ['Headwear', '12'],
+  ['Other', 'TBC']
 ];
 
 const Root = styled(Box)`
@@ -88,8 +88,8 @@ export default function Rarity() {
             <TableStyle>
               <tbody>
                 {
-                  KEY_INFO.map(info =>
-                    <tr>
+                  KEY_INFO.map((info,index) =>
+                    <tr key={index}>
                       <td><Typography variant='h6'>{info[0]}</Typography> </td>
                       <td><Typography variant='h6'>{info[1]}</Typography> </td>
                     </tr>

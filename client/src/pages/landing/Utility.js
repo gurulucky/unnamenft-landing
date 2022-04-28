@@ -110,16 +110,16 @@ export default function Membership() {
             <Typography className='flux_title' variant="h2" color='primary.main' sx={{ mb: 3 }}>
               BENEFITS
             </Typography>
-            <Box component='img' src='https://ucarecdn.com/2f707ef3-0598-46e7-a61e-33a6387dd655/boy.gif' sx={{ width: '100%' }} />
+            <Box component='img' src='/static/benefit.jpg' sx={{ width: '100%' }} />
           </ContentStyle>
         </Grid>
         <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center' }}>
           <ContentStyle>
             <MotionInView variants={varFadeInUp}>
-              <List dense={false}>
+              {/* <List dense={false}>
                 {
-                  MEMBERSHIP_TEXT.map(item =>
-                    <ListItem>
+                  MEMBERSHIP_TEXT.map((item,index) =>
+                    <ListItem key={index}>
                       <ListItemIcon>
                         <LoyaltyIcon sx={{ color: 'primary.main' }} />
                       </ListItemIcon>
@@ -127,7 +127,12 @@ export default function Membership() {
                     </ListItem>
                   )
                 }
-              </List>
+              </List> */}
+              <Typography variant='h4'>
+                The good people are the brainchild of Just Sandy ( Sandra ) Her goal was always to build a space to hang out and connect, create and vibe with likeminded people.<br/>
+                With heavy influence of fashion and music, the long term goal is and always has been to keep pushing the boundaries of creation and see what magic we can create.<br/>
+                Here you’ll be able to follow the collective gang of creative intro and extroverts, living in their own little world they call home.
+              </Typography>
             </MotionInView>
           </ContentStyle>
         </Grid>

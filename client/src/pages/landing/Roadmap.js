@@ -91,8 +91,8 @@ const RoadmapItem = ({ title, contents }) => {
         {title}
       </Typography>
       {
-        contents.map(text =>
-          <ListItem>
+        contents.map((text,index) =>
+          <ListItem key={index}>
             <ListItemIcon>
               <LabelImportantIcon />
             </ListItemIcon>
