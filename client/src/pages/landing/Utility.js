@@ -128,9 +128,13 @@ export default function Membership() {
                   )
                 }
               </List> */}
-              <Typography variant='h4'>
-                The good people are the brainchild of Just Sandy ( Sandra ) Her goal was always to build a space to hang out and connect, create and vibe with likeminded people.<br/>
-                With heavy influence of fashion and music, the long term goal is and always has been to keep pushing the boundaries of creation and see what magic we can create.<br/>
+              <Typography variant='h6' paragraph>
+                The good people are the brainchild of Just Sandy ( Sandra ) Her goal was always to build a space to hang out and connect, create and vibe with likeminded people.
+              </Typography>
+              <Typography variant='h6' paragraph>
+                With heavy influence of fashion and music, the long term goal is and always has been to keep pushing the boundaries of creation and see what magic we can create.
+              </Typography>
+              <Typography variant='h6' paragraph>
                 Here you’ll be able to follow the collective gang of creative intro and extroverts, living in their own little world they call home.
               </Typography>
             </MotionInView>
@@ -138,6 +142,6 @@ export default function Membership() {
         </Grid>
 
       </Grid>
-    </RootStyle>
+    </RootStyle >
   );
 }

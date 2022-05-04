@@ -27,7 +27,6 @@ const RootStyle = styled('div')(({ theme }) => ({
   // backgroundImage: 'url("https://shkarysharks.com/images/getyourshark.png")',
   padding: theme.spacing(10, 3),
   [theme.breakpoints.up('md')]: {
-    backgroundSize: '100%',
     padding: theme.spacing(10, 15)
   }
 }));
@@ -150,7 +149,6 @@ export default function Minting() {
   return (
     <RootStyle>
       <MotionInView variants={varFadeInDown}>
-        {/* <Stack direction={{ xs: 'column', md: 'row' }} sx={{ width: '100%' }}> */}
         <Stack direction='column'
           spacing={5} alignItems='center'
         >
@@ -158,13 +156,12 @@ export default function Minting() {
             <Typography className='flux_title' variant="h2" color='primary.main' sx={{ textAlign: 'center' }}>
               Mint Your NFTs
             </Typography>
-            <Typography variant='h3' color='secondary.main' textAlign='center'>Coming soon</Typography>
-            {/* <Stack direction='row' spacing={1} justifyContent='center'>
+            <Stack direction='row' spacing={1} justifyContent='center'>
               <Typography variant="h6" color='text.main'>
                 Total minted:
               </Typography>
               <Typography variant='h6' color='primary.main'>{`${totalMinted} / 10000`}</Typography>
-            </Stack> */}
+            </Stack>
           </Stack>
           {/* <Stack direction='column'>
             <Typography variant='h4' textAlign='center' color='primary.main'>
@@ -176,7 +173,7 @@ export default function Minting() {
             </TimerStyle>
           </Stack> */}
 
-          {/* <Stack direction='column'>
+          <Stack direction='column'>
             <Typography variant='h6' color='text.main' textAlign='center'>0.05 Eth + Gas fee</Typography>
             <Typography variant='h6' color='secondary.main' textAlign='center'>Max 10 NFTs per transactions</Typography>
           </Stack>
@@ -204,10 +201,9 @@ export default function Minting() {
             <span style={{ paddingBottom: '5px' }}>
               MINT
             </span>
-          </ConnectButton> */}
-          {/* <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a> */}
+          </ConnectButton>
+          <a href='https://rinkeby.etherscan.io/address/0xfFA4683b9aC4aAD95416804f4cac0e23f527F63c' target='_blank'><Typography variant='body1'>View Contract</Typography> </a>
         </Stack>
-        {/* </Stack> */}
       </MotionInView>
     </RootStyle >
   );

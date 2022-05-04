@@ -11,7 +11,7 @@ import { MotionInView, varFadeInDown } from '../../components/animate';
 // ----------------------------------------------------------------------
 const KEY_INFO = [
   ['Total number of NFTs', '4444'],
-  ['Skin', '20'],
+  ['Skin', '10'],
   ['Eyes', '5'],
   ['Background', '20'],
   ['Mouth', '16'],

@@ -26,42 +26,46 @@ import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 
 const RoadMapData = [
   {
-    title: '0% - The Launch',
-    contents: ['Aussie Bogan Club NFTs will be available for minting.']
-  },
-  {
-    title: '25% - ABC Airdrop',
+    title: 'Pre Mint',
     contents: [
-      'Exclusive for the first few NFT holders (randomly selected) Chief Bogan will airdrop 50 NFTs.',
-      'ABC NFT holders to commence uploading, to our social channels, their creations including skits, art and photos for a chance to be selected as a winner by the ABC community.',
-      'Aussie Bogan Club utility commences.',
-      'Enjoy the interaction with your fellow Aussie Bogan Club member.'
+      'Pre-launch marketing campaign',
+      'Gather and engage a strong community around Good People',
+      'Collaboration with several NFT projects'
     ]
   },
   {
-    title: '50% - More Giveaways & Utility',
+    title: 'Phase 1',
     contents: [
-      'A further 50 ABC NFTs will be given away to existing NFT holders.',
-      'ABC breeding program specification development commences.',
-      'Pursue utility expansion opportunities including partnerships.'
+      'Reveal happens 72 hours after mint.',
+      'Holders who minted either the full gold or full chrome silver people will be eligible to have a custom 3D character made for them by our in-house design team.',
+      'The Merch store goes live with drippy clothing available for order.'
     ]
   },
   {
-    title: '75% - Merch. Store & Next ABC NFT Drop',
+    title: 'Phase 2',
     contents: [
-      'Continue to pursue utility expansion opportunities including partnerships.',
-      'Commence development of merchandise store and collection.',
-      'Chief Bogan will give away another 50 ABC NFTs to holders on a randomly selected basis.',
-      'Creation of next ABC NFT drop will commence including integration into breeding program.'
+      'The good bank makes its first charity donation voted by the community.',
+      'Our first drop of figurines goes into production awaiting public sale.'
     ]
   },
   {
-    title: '100% - Bogans Rejoice!',
+    title: 'Phase 3',
     contents: [
-      'A new beginning for the Aussie Bogan Club',
-      'In another act of generosity, Chief Bogan will give away another 50 ABC NFTs to holders on a randomly selected basis.',
-      'Continue with development of ABC merchandise, breeding program, next ABC NFT drop creation and utility expansion including partnerships.',
-      'ABC NFT holders encouraged to upload, to our social channels, their creations including skits, art and photos for a chance to be selected as winners by the ABC community and enjoy the prizes including having their creations turned into NFTs.'
+      'The drop of 2-3 mini collections with high profile partners in the fashion and music industry.'
+    ]
+  },
+  {
+    title: 'Phase 4',
+    contents: [
+      'First Good People Meet up. The community will be given options for where would be most ideal for a good people holders and supporters to meet to appreciate fashion and music.',
+      'Animated Good People Collection goes live.'
+    ]
+  },
+  {
+    title: 'Phase 5',
+    contents: [
+      'Work begins on the animated Good People series.',
+      'Animated Good People Collection goes live.'
     ]
   }
 ]
@@ -87,7 +91,7 @@ const RoadmapItem = ({ title, contents }) => {
   const matches = useMediaQuery(theme.breakpoints.up('md'));
   return (
     <BorderStyle direction='column'>
-      <Typography variant="h4" color='primary'>
+      <Typography variant="h4" color='primary' textAlign='center'>
         {title}
       </Typography>
       {
@@ -148,7 +152,7 @@ export default function Roadmap() {
           <Stack direction='row' justifyContent='space-around' alignItems='center'>
             <Button className='button-arrow' onClick={handlePrevious}>{`<`}</Button>
             <Typography className='flux_title' variant="h2" color='primary.main' sx={{ mb: 3 }}>
-              Roadmap
+              Good Map
             </Typography>
             <Button className='button-arrow' onClick={handleNext}>{`>`}</Button>
           </Stack>

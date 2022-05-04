@@ -6,7 +6,7 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import { alpha, styled } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 //
-import Logo from './Logo';
+// import Logo from './Logo';
 
 // ----------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ export default function LoadingScreen({ ...other }) {
           repeat: Infinity
         }}
       >
-        <Logo sx={{ width: 64, height: 64 }} />
+        {/* <Logo sx={{ width: 64, height: 64 }} /> */}
       </motion.div>
 
       <Box

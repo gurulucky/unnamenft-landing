@@ -58,21 +58,21 @@ export default function About() {
             What are good people?
           </Typography>
           <Typography
-            variant='h4'
+            variant='h6'
             textAlign='center'
             paragraph
           >
             The good people are the brainchild of Just Sandy ( Sandra ) Her goal was always to build a space to hang out and connect, create and vibe with likeminded people.
           </Typography>
           <Typography
-            variant='h4'
+            variant='h6'
             textAlign='center'
             paragraph
           >
             With heavy influence of fashion and music, the long term goal is and always has been to keep pushing the boundaries of creation and see what magic we can create.
           </Typography>
           <Typography
-            variant='h4'
+            variant='h6'
             textAlign='center'
             paragraph
           > Here you’ll be able to follow the collective gang of creative intro and extroverts, living in their own little world they call home.

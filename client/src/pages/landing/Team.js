@@ -18,8 +18,8 @@ const ROLES = [
 ];
 
 const IMAGES = [
-  '/static/benefit.jpg',
-  '/static/benefit.jpg',
+  '/static/sandra.jpg',
+  '/static/duke.jpg',
 ]
 
 const SOCIALS = [
@@ -36,6 +36,8 @@ const PLANS = [...Array(2)].map((_, index) => ({
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 3),
+  marginLeft: 'auto',
+  marginRight: 'auto',
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 15)
   }
@@ -53,15 +55,10 @@ function PlanCard({ plan, cardIndex }) {
         zIndex: 1,
         borderRadius: '10px',
         border: '1px solid black',
-        boxShadow: (theme) =>
-          `0px 48px 80px ${alpha(isLight ? theme.palette?.grey[500] : theme.palette?.common.black, 0.12)}`,
-        ...(cardIndex === 1 && {
-          boxShadow: (theme) =>
-            `0px 48px 80px ${alpha(isLight ? theme.palette?.grey[500] : theme.palette?.common.black, 0.48)}`
-        })
+        width: { xs: '80%', sm: '50%', md: '35%' }
       }}
     >
-      <Stack direction='row' sx={{ borderBottom: '1px solid black', width: '100%' }}>
+      <Stack direction='row' sx={{ borderBottom: '1px solid black' }}>
         <Stack direction='row' justifyContent='space-around' alignItems='center' sx={{ width: '40%', borderRight: '1px solid black', p: 1 }}>
           <Typography variant='h6'>{name}</Typography>
           <a href={`${social.href}`} target='_blank'>
@@ -92,15 +89,11 @@ export default function Team() {
         </MotionInView>
       </Box>
 
-      <Grid container spacing={5}>
+      <Stack direction={{ xs: 'column', md: 'row' }} justifyContent='space-around' alignItems='center' spacing={3}>
         {PLANS.map((plan, index) => (
-          <Grid key={plan.name} item xs={12} md={6}>
-            <MotionInView variants={index === 1 ? varFadeInDown : varFadeInUp}>
-              <PlanCard plan={plan} cardIndex={index} />
-            </MotionInView>
-          </Grid>
+          <PlanCard plan={plan} cardIndex={index} />
         ))}
-      </Grid>
-    </RootStyle>
+      </Stack>
+    </RootStyle >
   );
 }

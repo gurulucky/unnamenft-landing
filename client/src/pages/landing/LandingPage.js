@@ -56,13 +56,13 @@ export default function LandingPage() {
 
           <Future />
         </Stack>
-        <Stack id="roadmap">
+        <Stack id="goodmap">
           <Roadmap />
         </Stack>
-        <Stack id='mint'>
+        {/* <Stack id='mint'>
           <Minting />
 
-        </Stack>
+        </Stack> */}
         {/* <Stack id='collection'>
 
           <Collection />
@@ -70,9 +70,9 @@ export default function LandingPage() {
         <Stack id='rarity'>
           <Rarity />
         </Stack>
-        <Stack id='utility'>
+        {/* <Stack id='utility'>
           <Membership />
-        </Stack>
+        </Stack> */}
         <Stack id='team'>
           <Team />
         </Stack>

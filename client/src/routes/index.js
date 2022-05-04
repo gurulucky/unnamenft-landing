@@ -44,6 +44,10 @@ export default function Router() {
         {
           path: '/',
           element: <LandingPage />
+        },
+        {
+          path: '/mint',
+          element: <MintPage />
         }
       ]
     }
@@ -53,3 +57,4 @@ export default function Router() {
 // IMPORT COMPONENTS
 // Main
 const LandingPage = Loadable(lazy(() => import('../pages/landing/LandingPage')));
+const MintPage = Loadable(lazy(() => import('../pages/landing/Minting')));

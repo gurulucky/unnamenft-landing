@@ -50,7 +50,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
   paddingBottom: theme.spacing(15),
   [theme.breakpoints.up('md')]: {
     // margin: 'unset',
-    paddingTop: theme.spacing('70vh'),
+    paddingTop: theme.spacing('80vh'),
   },
   right: 0,
   left: 0
